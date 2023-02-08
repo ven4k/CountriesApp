@@ -1,0 +1,96 @@
+.guessTheFlagPage {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        width: 700px;
+        height: 500px;
+    }
+
+    .formBlock {
+        margin-left: 60px;
+        position: relative;
+        margin-top: 10px;
+
+        .findInput {
+            height: 40px;
+            width: 300px;
+            font-size: 20px;
+            border-radius: 6px;
+
+        }
+
+        .findInput:focus {
+            outline: none;
+        }
+
+        .resultFalse,
+        .resultTrue {
+            position: absolute;
+            font-size: 240px;
+            top: -460px;
+            left: -70px;
+            text-shadow: 4px 4px 4px #000;
+        }
+
+        .resultFalse {
+            color: red;
+
+        }
+
+        .resultTrue {
+            color: green;
+        }
+
+        .checkBtn {
+            margin: -4px 0 0 10px;
+        }
+
+        .nextBtn {
+            margin-top: -66px;
+            margin-left: -80px;
+        }
+
+    }
+
+    .hiddenNameCountry {
+        text-align: center;
+        top: 170px;
+        position: absolute;
+        color: #f7f7f7;
+        font-weight: 600;
+        text-shadow: 4px 4px 4px #000;
+
+    }
+
+}
+
+@media screen and (min-width: 280px) and (max-width: 500px) {
+    .guessTheFlagPage {
+        margin-top: 60px;
+        margin-left: -40px;
+        img {
+            margin-left: -20px;
+            width: 400px;
+            height: 250px;
+        }
+        .formBlock {
+            .findInput {
+                width: 200px;
+            }
+            .resultFalse,
+            .resultTrue {
+                font-size: 160px;
+                top: -280px;
+                left: -60px;
+            }
+        }
+        .hiddenNameCountry {
+            top: 100px;
+        }
+
+    }
+
+}

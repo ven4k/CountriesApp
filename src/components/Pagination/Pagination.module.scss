@@ -1,0 +1,201 @@
+.paginationPage {
+    top: 30px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.favoriteIco {
+    color: white;
+}
+
+.favoriteActiveIco {
+    color: red;
+}
+
+.mapedItems {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 20px;
+    font-weight: 600;
+
+    .currentCountry {
+        position: relative;
+        display: flex;
+        margin-top: 60px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .countryImage {
+        width: 300px;
+        height: 150px;
+    }
+
+    .countryImage:hover {
+        cursor: pointer;
+    }
+
+    .countryName {
+        margin-bottom: 6px;
+    }
+
+    .currentCountry:hover {
+        color: red;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
+
+
+
+.paginationBlock {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 660px;
+    text-align: center;
+    padding: 5px;
+
+    .paginationItemsBlock {
+        display: flex;
+    }
+
+    .activePaginationItem {
+        outline: 2px solid red;
+        margin: 0 20px;
+        width: 24px;
+    }
+
+    .activePaginationItem,
+    .paginationItem {
+        border-radius: 4px;
+    }
+
+    .activePaginationItem:hover,
+    .paginationItem:hover {
+        cursor: pointer;
+    }
+
+    .paginationItem {
+        border-color: white;
+        margin: 0 20px;
+        width: 24px;
+    }
+
+    .paginationBtnLeft {
+        font-size: 20px;
+        position: absolute;
+        left: 300px;
+    }
+
+    .paginationBtnRight {
+        font-size: 20px;
+        position: absolute;
+        right: 300px;
+    }
+
+    .paginationBtnLeft,
+    .paginationBtnRight {
+        margin-top: -12px !important;
+        color: white;
+    }
+
+    .paginationLastPage {
+        position: absolute;
+        right: 400px;
+    }
+
+    .paginationLastPage:hover,
+    .paginationFirstPage:hover {
+        cursor: pointer;
+    }
+
+    .paginationFirstPage {
+        position: absolute;
+        left: 400px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 500px) {
+    .mapedItems {
+        margin-left: -40px;
+        min-width: 90vw;
+        display: grid;
+        padding: 0;
+        grid-template-columns: repeat(2, 200px);
+        font-size: 16px;
+        justify-content: center;
+
+        .countryImage {
+            width: 124px;
+            height: 70px;
+        }
+
+        .currentCountry {
+            margin-bottom: -20px;
+        }
+
+        .currentCountry:hover {
+            color: inherit;
+            transform: scale(1);
+        }
+        .countryImage:hover {
+            cursor: inherit;
+        }
+    
+    }
+
+    .paginationBlock {
+        height: 34px;
+        padding: 4px;
+        left: -40px;
+        font-size: 14px;
+        top: 0;
+
+        .paginationItemsBlock {
+            margin-left: -6px;
+        }
+
+        .activePaginationItem,
+        .paginationItem {
+            margin: 4px;
+            width: 24px;
+
+        }
+
+        .paginationBtnLeft {
+            position: absolute;
+            left: 44px;
+        }
+
+        .paginationBtnRight {
+            position: absolute;
+            right: 44px;
+        }
+
+        .paginationLastPage {
+            right: 120px;
+        }
+
+        .paginationFirstPage {
+            left: 116px;
+        }
+
+        .paginationLastPage,
+        .paginationFirstPage {
+            position: absolute;
+            bottom: 8px;
+        }
+        .activePaginationItem:hover,
+        .paginationItem:hover {
+            cursor: inherit;
+        }
+        .paginationLastPage:hover,
+        .paginationFirstPage:hover {
+            cursor: inherit;
+        }
+
+    }
+}

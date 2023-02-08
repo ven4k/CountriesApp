@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Main } from './pages/Main/Main';
+import { Favorites } from './pages/Favorites/Favorites';
+import { Header } from './components/Header/Header';
+import { NameTheCountry } from './pages/NameTheCountry/NameTheCountry';
+import { useAppDispatch } from './store/hooks';
+import { fetchCountries } from './store/action-creators/fetchCountries';
+import './App.scss';
 
-function App() {
+
+const App: React.FC = () => {
+ const dispatch = useAppDispatch();
+
+//Обращение к API, получение данных и диспатчинг их в стор
+ useEffect(() => {
+    dispatch(fetchCountries())
+}, [dispatch])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/found-country" element={<NameTheCountry />} />
+      </Routes>
     </div>
+
   );
 }
 

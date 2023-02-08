@@ -1,0 +1,62 @@
+.favoriteBlock {
+    padding: 20px;
+    border: 2px solid white;
+    display: flex;
+    font-size: 20px;
+
+    .countryName {
+        margin-bottom: 4px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .countryFlag {
+        width: 300px;
+        height: 150px;
+    }
+
+    .favoriteMainInfo {
+        text-align: center;
+    }
+
+    span {
+        color: gold;
+        font-weight: 600;
+    }
+
+    .favoriteInform {
+        div {
+            padding: 2px;
+        }
+
+        margin-top: 20px;
+        margin-left: 40px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 500px) {
+
+    .favoriteBlock {
+        margin-left: 10px;
+        padding: 10px;
+        font-size: 14px;
+        min-width: 260px;
+        max-width: 460px;
+
+        .countryFlag {
+            margin-top: 10px;
+            width: 124px;
+            height: 70px;
+            border: 2px solid red;
+
+        }
+
+        .countryName {
+            width: 120px;
+        }
+
+        .favoriteInform {
+            margin-left: 30px;
+        }
+    }
+}
