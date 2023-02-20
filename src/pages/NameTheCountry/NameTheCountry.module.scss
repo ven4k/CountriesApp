@@ -4,15 +4,29 @@
     flex-direction: column;
     align-items: center;
 
+    .flagBlock {
+        width: 700px;
+        height: 500px;
+    }
+
     img {
         width: 700px;
         height: 500px;
     }
 
+    .flagIslands {
+        text-align: center;
+        top: 130px;
+        position: absolute;
+        color: #f7f7f7;
+        font-weight: 600;
+        text-shadow: 4px 4px 4px #000;
+    }
+
     .formBlock {
         margin-left: 60px;
         position: relative;
-        margin-top: 10px;
+        margin-top: 16px;
 
         .findInput {
             height: 40px;
@@ -65,21 +79,66 @@
 
     }
 
+    .hiddenDatalist {
+        display: none;
+    }
+
+    .showedDatalist {
+        border-radius: 5px;
+        padding: 5px;
+        background-color: #f7f7f7;
+        position: absolute;
+        overflow-y: scroll;
+        width: 300px;
+        max-height: 400px;
+        display: block;
+        
+    }
+
+    .showedDatalist::-webkit-scrollbar {
+        width: 20px;
+
+    }
+
+    .showedDatalist::-webkit-scrollbar-thumb {
+        width: 4px;
+        border-radius: 6px;
+        background-color: #000;
+    }
+
+    .option {
+        font-size: 20px;
+        font-weight: 600;
+        padding: 5px;
+        color: black;
+    }
+
+    .option:hover {
+        background-color: tomato;
+        cursor: pointer;
+    }
 }
+
 
 @media screen and (min-width: 280px) and (max-width: 500px) {
     .guessTheFlagPage {
         margin-top: 60px;
-        margin-left: -40px;
-        img {
-            margin-left: -20px;
-            width: 400px;
+        margin-left: -80px;
+
+        .flagBlock {
+            width: 380px;
             height: 250px;
         }
+        img {
+            width: 380px;
+            height: 250px;
+        }
+
         .formBlock {
             .findInput {
                 width: 200px;
             }
+
             .resultFalse,
             .resultTrue {
                 font-size: 160px;
@@ -87,8 +146,12 @@
                 left: -60px;
             }
         }
+
         .hiddenNameCountry {
             top: 100px;
+        }
+        .showedDatalist{
+            margin-left: -60px;
         }
 
     }

@@ -5,6 +5,7 @@ import { Pagination } from "../../components/Pagination/Pagination";
 import { TextfieldStyles } from "../../components/TextFieldStyles/TextFieldStyles";
 import styles from './Main.module.scss';
 
+
 export const Main: FC = () => {
     const [inputValue, setInputValue] = useState<string>('');
     const countries = useAppSelector(state => state.countriesList.countries)
@@ -17,14 +18,14 @@ export const Main: FC = () => {
         localStorage.setItem('element', JSON.stringify(favorites))
     }, [favorites])
 
+    //Фильтрация массива
+    const filtered = countries.filter(el => el.name.common.toLowerCase().includes(inputValue && inputValue.toLowerCase()))
 
     // Получение данных с инпута
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value)
     }
 
-    // Фильтрация массива по данным с инпута
-    const filtered = countries.filter(el => el.name.common.toLowerCase().includes(inputValue && inputValue.toLowerCase()))
 
     return (
         <div className={styles.main}>

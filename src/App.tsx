@@ -12,6 +12,7 @@ import './App.scss';
 const App: React.FC = () => {
  const dispatch = useAppDispatch();
 
+
 //Обращение к API, получение данных и диспатчинг их в стор
  useEffect(() => {
     dispatch(fetchCountries())

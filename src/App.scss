@@ -6,6 +6,7 @@
   color: #f7f7f7;
   margin: 0 auto;
   width: 1440px;
+  height: 1200px;
   position: relative;
   padding-top: 20px;
 }
@@ -28,6 +29,8 @@ body {
   .App {
     min-width: 280px;
     max-width: 480px;
+    height: auto;
+    overflow-x: hidden;
   }
   
   button:hover {
