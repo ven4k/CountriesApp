@@ -115,6 +115,12 @@ export const NameTheCountry = () => {
     const handleBlurInput = () => {
         setIsInputFocused(false)
     }
+    //для отображения выпадающего списка(стили), можно было установить либу classnames, но мы не ищем легких путей :)
+    let targetCountry = filtered.map(el => el.name.common).join('');
+    let rusTargetCountry = filtered.map(el => el.translations.rus.common).join('');
+    const datalistStyles = flagName && isInputFocused && filtered.length >= 1 && targetCountry !== flagName && rusTargetCountry !== flagName;
+
+    
     useEffect(() => {
         flagName && setIsInputFocused(true);
     }, [flagName])
@@ -126,7 +132,7 @@ export const NameTheCountry = () => {
                 <div>{renderIsTrue}</div>
                 <form>
                     <input className={styles.findInput} type='text' autoComplete="off" value={flagName} onChange={handleChange} onFocus={handleFocusInput} ref={inputRef} onBlur={handleBlurInput} />
-                    <div className={(flagName && isInputFocused && filtered.length >= 1) ? styles.showedDatalist : styles.hiddenDatalist}>
+                    <div className={datalistStyles ? styles.showedDatalist : styles.hiddenDatalist}>
                         {filtered.map(el => (
                             <div key={el.cca3} data-value={isRus ? el.translations.rus.common : el.name.common} className={styles.option} onMouseDown={handleMouseDownInputDatalist}>{isRus ? el.translations.rus.common : el.name.common}</div>
                         ))}
