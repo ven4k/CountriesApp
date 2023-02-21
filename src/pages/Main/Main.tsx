@@ -10,7 +10,7 @@ export const Main: FC = () => {
     const [inputValue, setInputValue] = useState<string>('');
     const countries = useAppSelector(state => state.countriesList.countries)
     const favorites = useAppSelector(state => state.countriesList.favorites)
-    const err = useAppSelector(state => state.countriesList.error)
+    const err = useAppSelector(state => state.countriesList.error);
     const loading = useAppSelector(state => state.countriesList.loading)
 
     //Обновления localstorage всяккий раз, когда меняется состояние избранного

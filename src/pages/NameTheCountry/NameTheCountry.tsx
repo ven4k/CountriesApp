@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useRef, useState, ChangeEvent, MouseEvent } from "react";
+import { Fragment, useMemo, useRef, useState, ChangeEvent, MouseEvent, useEffect } from "react";
 import { Button } from "@material-ui/core";
 import { ApiData } from "../../store/favoritesSlice";
 import { useAppSelector } from "../../store/hooks"
@@ -20,6 +20,7 @@ export const NameTheCountry = () => {
     const [isInputFocused, setIsInputFocused] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
+    //фильтрованный массив стран
     const filtered = countries.filter(el => el.name.common.toLowerCase().includes(flagName.toLowerCase()) || el.translations.rus.common.toLowerCase().includes(flagName.toLowerCase()))
     //получение массива случайных чисел равным количеству объектов стран в сторе
     const { array } = useMemo(() => {
@@ -76,10 +77,12 @@ export const NameTheCountry = () => {
         return null
     })
 
+    // проверка языка для инпута и выпадающего списка
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setIsRus(cyrillicPattern.test(e.target.value))
         setFlagName(e.target.value);
     }
+    // проверка соответствует ли страна указанному флагу
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setTrueCountry(flagName);
@@ -87,25 +90,34 @@ export const NameTheCountry = () => {
             setFlagName('')
         }, 0)
     }
+    // следующая страна
     const handleNextCountry = () => {
         setFlagName('');
         setIsCountry(true);
         setTimeout(() => {
             setCurr(curr + 1)
             setIsCountry(false)
-            
         }, 1500)
     }
-    const handleClickInputDatalist = (e: MouseEvent<HTMLDivElement>) => {
-        inputRef.current?.focus();
-        let target = e.currentTarget.getAttribute('data-id');
+    // выбор элемента списка стран
+    const handleMouseDownInputDatalist = (e: MouseEvent<HTMLDivElement>) => {
+        let target = e.currentTarget.getAttribute('data-value');
         setFlagName(target as string);
         setIsInputFocused(false);
+        setTimeout(() => {
+            inputRef.current?.focus();
+        }, 0)
 
     }
     const handleFocusInput = () => {
-        setIsInputFocused(true)
+        setIsInputFocused(true);
     };
+    const handleBlurInput = () => {
+        setIsInputFocused(false)
+    }
+    useEffect(() => {
+        flagName && setIsInputFocused(true);
+    }, [flagName])
 
     return (
         <div className={styles.guessTheFlagPage}>
@@ -113,10 +125,10 @@ export const NameTheCountry = () => {
             <div className={styles.formBlock}>
                 <div>{renderIsTrue}</div>
                 <form>
-                    <input className={styles.findInput} type='text' autoComplete="off" value={flagName} onChange={handleChange} onFocus={handleFocusInput} ref={inputRef} />
-                    <div className={(isInputFocused && flagName) ? styles.showedDatalist : styles.hiddenDatalist}>
+                    <input className={styles.findInput} type='text' autoComplete="off" value={flagName} onChange={handleChange} onFocus={handleFocusInput} ref={inputRef} onBlur={handleBlurInput} />
+                    <div className={(flagName && isInputFocused && filtered.length >= 1) ? styles.showedDatalist : styles.hiddenDatalist}>
                         {filtered.map(el => (
-                            <div key={el.cca3} data-id={isRus ? el.translations.rus.common : el.name.common} className={styles.option} onClick={handleClickInputDatalist}>{isRus ? el.translations.rus.common : el.name.common}</div>
+                            <div key={el.cca3} data-value={isRus ? el.translations.rus.common : el.name.common} className={styles.option} onMouseDown={handleMouseDownInputDatalist}>{isRus ? el.translations.rus.common : el.name.common}</div>
                         ))}
                     </div>
 

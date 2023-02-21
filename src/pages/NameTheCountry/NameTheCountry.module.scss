@@ -80,10 +80,14 @@
     }
 
     .hiddenDatalist {
-        display: none;
+        visibility: hidden;
+        position: absolute;
+        opacity: 0;
     }
 
     .showedDatalist {
+        visibility: visible;
+        opacity: 1;
         border-radius: 5px;
         padding: 5px;
         background-color: #f7f7f7;
