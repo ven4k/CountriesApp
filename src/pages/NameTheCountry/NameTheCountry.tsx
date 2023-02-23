@@ -20,8 +20,11 @@ export const NameTheCountry = () => {
     const [isInputFocused, setIsInputFocused] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
-    //фильтрованный массив стран
-    const filtered = countries.filter(el => el.name.common.toLowerCase().includes(flagName.toLowerCase()) || el.translations.rus.common.toLowerCase().includes(flagName.toLowerCase()))
+    //фильтрованный массив стран и сортировка сначала по первой букве вписанной в инпут, а затем, есть ли эта буква в слове
+    const filtered =  countries.filter(el => (el.name.common.toLowerCase().includes(flagName.toLowerCase())) || el.translations.rus.common.toLowerCase().includes(flagName.toLowerCase()))
+    .sort((a, b) => (a.name.common.toLowerCase().includes(flagName.toLowerCase()) < b.name.common.toLowerCase().startsWith(flagName.toLowerCase())) ? 1 : (a.name.common.toLowerCase().includes(flagName.toLowerCase()) > b.name.common.toLowerCase().startsWith(flagName.toLowerCase())) ? -1 : 1)
+ 
+
     //получение массива случайных чисел равным количеству объектов стран в сторе
     const { array } = useMemo(() => {
         let targetValue: valueType = {};
@@ -116,11 +119,10 @@ export const NameTheCountry = () => {
         setIsInputFocused(false)
     }
     //для отображения выпадающего списка(стили), можно было установить либу classnames, но мы не ищем легких путей :)
-    let targetCountry = filtered.map(el => el.name.common).join('');
-    let rusTargetCountry = filtered.map(el => el.translations.rus.common).join('');
+    let targetCountry = filtered.map(el => el.name.common).join(',');
+    let rusTargetCountry = filtered.map(el => el.translations.rus.common).join(',');
     const datalistStyles = flagName && isInputFocused && filtered.length >= 1 && targetCountry !== flagName && rusTargetCountry !== flagName;
 
-    
     useEffect(() => {
         flagName && setIsInputFocused(true);
     }, [flagName])

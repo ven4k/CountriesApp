@@ -80,6 +80,7 @@
     }
 
     .hiddenDatalist {
+        max-height: 400px;
         visibility: hidden;
         position: absolute;
         opacity: 0;
