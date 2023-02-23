@@ -80,9 +80,12 @@
     }
 
     .hiddenDatalist {
+        background-color: #f7f7f7;
+        width: 300px;
         max-height: 400px;
         visibility: hidden;
         position: absolute;
+        overflow-y: scroll;
         opacity: 0;
     }
 
@@ -97,7 +100,6 @@
         width: 300px;
         max-height: 400px;
         display: block;
-        
     }
 
     .showedDatalist::-webkit-scrollbar {
@@ -127,7 +129,7 @@
 
 @media screen and (min-width: 280px) and (max-width: 500px) {
     .guessTheFlagPage {
-        margin-top: 60px;
+        margin-top: 140px;
         margin-left: -80px;
 
         .flagBlock {
@@ -137,6 +139,10 @@
         img {
             width: 380px;
             height: 250px;
+        }
+        .flagIslands{
+            top: 200px;
+            font-size: 20px;
         }
 
         .formBlock {
@@ -153,10 +159,13 @@
         }
 
         .hiddenNameCountry {
+            left: 0;
+            width: 400px;
             top: 100px;
         }
         .showedDatalist{
             margin-left: -60px;
+            max-height: 400px;
         }
 
     }
