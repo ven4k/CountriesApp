@@ -1,13 +1,10 @@
 import { FC, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useAppSelector } from "../../store/hooks";
+import { ModalProps } from "../../types/typesComponents";
 import { AboutCountry } from "../AboutCountry/AboutCountry";
 import styles from './Modal.module.scss';
-interface ModalProps {
-    onClose: () => void;
-    isOpen?: boolean
-    currentId?: string;
-}
+
 
 const modalRootElement = document.querySelector('#modal');
 export const Modal: FC<ModalProps> = ({ onClose, isOpen = false }: ModalProps) => {

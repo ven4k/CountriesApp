@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { IconButton } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete'
 import { AboutCountry } from "../../components/AboutCountry/AboutCountry";
-import { ApiData, removeFavoriteList } from "../../store/favoritesSlice";
+import { ApiData } from "../../types/favoriteTypes";
+import { removeFavoriteList } from "../../store/favoritesSlice";
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import styles from './Favorites.module.scss';
 

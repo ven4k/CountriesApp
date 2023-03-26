@@ -1,13 +1,11 @@
 import { Fragment, useMemo, useRef, useState, ChangeEvent, MouseEvent, useEffect } from "react";
-import { Button } from "@material-ui/core";
-import { ApiData } from "../../store/favoritesSlice";
+import { Button } from "@mui/material";
+import { ApiData } from "../../types/favoriteTypes";
 import { useAppSelector } from "../../store/hooks"
 import styles from './NameTheCountry.module.scss';
+import { valueType } from "../../types/typesComponents";
 
 
-type valueType = {
-    [K in any]: number;
-}
 
 export const NameTheCountry = () => {
     const countries = useAppSelector((state) => state.countriesList.countries);

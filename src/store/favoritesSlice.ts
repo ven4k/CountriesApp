@@ -1,38 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { fetchCountries } from './action-creators/fetchCountries';
+import { ApiData, initStateType } from '../types/favoriteTypes';
+import { fetchCountries } from './middlewareThunk/fetchCountries';
 
 
-type strObj = { [key: string]: string }
-export interface ApiData {
-  name: {
-    common: string,
-    official: string,
-  },
-  cca2: string,
-  cca3?: string,
-  region?: string,
-  languages: strObj,
-  population?: number,
-  timezones?: string[],
-  continents?: string,
-  flags: {
-    png: string,
-    svg: string
-  },
-  translations: {
-    rus: {
-      common: string
-    }
-  }
-}
 
-type initStateType = {
-  countries: ApiData[],
-  favorites: ApiData[],
-  currentCountry: ApiData,
-  loading: boolean,
-  error: string | undefined | null
-}
 let favoriteStorage = localStorage.getItem('element');
 let currentCountryStorage = localStorage.getItem('currItem');
 let parsedFavoriteStorage = JSON.parse(favoriteStorage as string);

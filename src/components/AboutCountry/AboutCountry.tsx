@@ -1,10 +1,7 @@
-import { ApiData } from "../../store/favoritesSlice";
+import { FC } from "react"
+import { AboutCountryType } from "../../types/typesComponents"
 
-type AboutCountryType = {
-    targetStyles: string,
-    targetElement: ApiData;
-}
-export const AboutCountry = ({ targetStyles, targetElement }: AboutCountryType) => {
+export const AboutCountry :FC<AboutCountryType> = ({ targetStyles, targetElement }: AboutCountryType) => {
     return (
         <div className={targetStyles}>
             <div><span>Name: </span>{targetElement.name.common}</div>

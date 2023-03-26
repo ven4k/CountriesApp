@@ -5,9 +5,8 @@ import { Favorites } from './pages/Favorites/Favorites';
 import { Header } from './components/Header/Header';
 import { NameTheCountry } from './pages/NameTheCountry/NameTheCountry';
 import { useAppDispatch } from './store/hooks';
-import { fetchCountries } from './store/action-creators/fetchCountries';
+import { fetchCountries } from './store/middlewareThunk/fetchCountries';
 import './App.scss';
-
 
 const App: React.FC = () => {
  const dispatch = useAppDispatch();

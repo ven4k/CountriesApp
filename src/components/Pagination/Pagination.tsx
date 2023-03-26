@@ -1,18 +1,14 @@
 import { useState, FC, MouseEvent, useLayoutEffect } from 'react'
-import { Favorite, FavoriteBorder } from '@material-ui/icons';
+import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import { Button, Checkbox } from '@mui/material';
-import { ApiData } from '../../store/favoritesSlice';
+import { ApiData } from '../../types/favoriteTypes';
 import { addFavoriteList, removeFavoriteList, ChangeCurrentCountry } from "../../store/favoritesSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Modal } from '../Modal/Modal';
 import styles from './Pagination.module.scss';
+import { PaginationType } from '../../types/typesComponents';
 
 
-
-
-type PaginationType = {
-    filtered: ApiData[],
-}
 export const Pagination: FC<PaginationType> = ({ filtered }: PaginationType) => {
     const dispatch = useAppDispatch();
     const favorites = useAppSelector(state => state.countriesList.favorites);

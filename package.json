@@ -1,12 +1,10 @@
 {
-  "name": "avia",
+  "name": "pet-project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.6",
     "@reduxjs/toolkit": "^1.9.0",
@@ -18,6 +16,7 @@
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "classnames": "^2.3.2",
+    "clsx": "^1.2.1",
     "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

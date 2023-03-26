@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
-import { ApiData } from "../favoritesSlice"
+import { ApiData } from "../../types/favoriteTypes";
+
 
 
 export const fetchCountries = createAsyncThunk<ApiData[], undefined, { rejectValue: string }>(
@@ -12,4 +13,3 @@ export const fetchCountries = createAsyncThunk<ApiData[], undefined, { rejectVal
         return await response.json() as ApiData[];
     }
 )
-
