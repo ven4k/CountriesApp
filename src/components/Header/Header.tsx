@@ -6,8 +6,6 @@ import styles from './Header.module.scss';
 export const Header: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const handleClick = () => {
-        console.log('123');
-        console.log(isOpen)
         setIsOpen(!isOpen)
     }
     return (
@@ -17,7 +15,6 @@ export const Header: FC = () => {
                 <NavLink className={({ isActive }) => clsx(styles.link, { [styles.activeLink]: isActive })} to='/favorites'>Favorites</NavLink>
                 <NavLink className={({ isActive }) => clsx(styles.link, { [styles.activeLink]: isActive })} to='/found-country'>Guess the country</NavLink>
             </div>
-            {/* [styles.navBarActive]: isOpen, [styles.navBarNonActive]: !isOpen */}
             <div>
                 <div className={clsx(styles.burgerMenu, { [styles.burgerMenuActive]: isOpen })} onClick={handleClick}></div>
                 <div className={clsx(styles.navBarNonActive, { [styles.navBarActive]: isOpen })}>
