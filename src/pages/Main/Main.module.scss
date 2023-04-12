@@ -1,3 +1,17 @@
 .searchInput{
     margin: 0 0 0 50px;
 }
+.loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 500px){
+    .searchInput{
+        margin: 0 10px 0 10px;
+    }
+}

@@ -24,12 +24,12 @@ export const Pagination: FC<PaginationType> = ({ filtered }: PaginationType) => 
 
     // Изменение количества отображаемых флагов и переключаемых страниц для мобильных устройств
     useLayoutEffect(() => {
-        if (window.matchMedia('(min-width: 280px) and (max-width: 480px)').matches === true) {
+        if (window.matchMedia('(max-width: 500px)').matches === true) {
             setPageLimit(6)
             setmaxPageNumberLimit(6)
         }
         const handleResize = () => {
-            if (window.matchMedia('(min-width: 280px) and (max-width: 480px)').matches === true) {
+            if (window.matchMedia('(max-width: 500px)').matches === true) {
                 setPageLimit(6)
                 setmaxPageNumberLimit(6)
             } else {

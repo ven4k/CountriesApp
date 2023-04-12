@@ -45,7 +45,7 @@ export const Favorites = () => {
                     })}
                 
                 </>
-            ) : <h2>So far, it's empty</h2>}
+            ) : <h2 className={styles.empty}>So far, it's empty</h2>}
 
         </div>
     )

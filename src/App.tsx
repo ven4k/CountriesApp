@@ -9,13 +9,14 @@ import { fetchCountries } from './store/middlewareThunk/fetchCountries';
 import './App.scss';
 
 const App: React.FC = () => {
- const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-
-//Обращение к API, получение данных и диспатчинг их в стор
- useEffect(() => {
+  //Обращение к API, получение данных и диспатчинг их в стор
+  useEffect(() => {
     dispatch(fetchCountries())
-}, [dispatch])
+  }, [dispatch])
+
+
 
   return (
     <div className="App">

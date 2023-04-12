@@ -36,7 +36,7 @@ export const Main: FC = () => {
             </div>
             <div>
                 {err && <h2>{err}</h2>}
-                {loading && <CircularProgress size="10rem" />}
+                {loading && <div className={styles.loader}><CircularProgress size="10rem" /></div>}
                 <div>
                     <Pagination filtered={filtered} />
                 </div>

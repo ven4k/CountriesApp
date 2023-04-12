@@ -13,6 +13,7 @@
 }
 
 .mapedItems {
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     font-size: 20px;
@@ -27,8 +28,8 @@
     }
 
     .countryImage {
-        width: 300px;
-        height: 150px;
+        max-width: 300px;
+        max-height: 150px;
     }
 
     .countryImage:hover {
@@ -65,7 +66,8 @@
     .activePaginationItem {
         outline: 2px solid red;
         margin: 0 20px;
-        width: 24px;
+        padding: 6px;
+        width: 40px;
     }
 
     .activePaginationItem,
@@ -79,32 +81,34 @@
     }
 
     .paginationItem {
-        border-color: white;
+        outline: 1px solid gray;
         margin: 0 20px;
-        width: 24px;
+        padding: 6px;
+        width: 40px;
     }
 
     .paginationBtnLeft {
         font-size: 20px;
         position: absolute;
-        left: 300px;
+        left: 260px;
     }
 
     .paginationBtnRight {
         font-size: 20px;
         position: absolute;
-        right: 300px;
+        right: 260px;
     }
 
     .paginationBtnLeft,
     .paginationBtnRight {
-        margin-top: -12px !important;
+        top: 0;
         color: white;
     }
 
     .paginationLastPage {
         position: absolute;
-        right: 400px;
+        right: 350px;
+        top: 5px;
     }
 
     .paginationLastPage:hover,
@@ -112,89 +116,217 @@
         cursor: pointer;
     }
 
+    .paginationLastPage,
+    .paginationFirstPage {
+        padding: 6px;
+        width: 40px;
+        outline: 1px solid gold;
+        border-radius: 4px;
+    }
+
     .paginationFirstPage {
         position: absolute;
-        left: 400px;
+        top: 5px;
+        left: 350px;
     }
 }
 
-@media screen and (min-width: 280px) and (max-width: 500px) {
+@media (min-width: 331px)and (max-width: 500px) {
     .mapedItems {
-        margin-left: -80px;
-        min-width: 90vw;
+        text-align: center;
+        width: 100vw;
         display: grid;
         padding: 0;
-        grid-template-columns: repeat(2, 200px);
-        font-size: 16px;
+        grid-template-columns: repeat(2, 160px);
+        font-size: 0.8rem;
         justify-content: center;
 
         .countryImage {
-            width: 124px;
-            height: 70px;
+            max-width: 124px;
+            max-height: 70px;
         }
 
         .currentCountry {
             margin-bottom: -20px;
         }
-
-        .currentCountry:hover {
-            color: inherit;
-            transform: scale(1);
-        }
-        .countryImage:hover {
-            cursor: inherit;
-        }
-    
     }
 
     .paginationBlock {
-        height: 34px;
-        padding: 4px;
-        left: -40px;
-        font-size: 14px;
+        max-width: 460px;
+        max-height: 40px;
+        padding: 0px;
+        left: 0;
+        font-size: 0.9rem;
         top: 0;
-
-        .paginationItemsBlock {
-            margin-left: -6px;
-        }
 
         .activePaginationItem,
         .paginationItem {
-            margin: 4px;
-            width: 24px;
-
+            padding: 3px;
+            margin: 0 4px;
+            max-width: 6vw;
         }
 
         .paginationBtnLeft {
+            top: 0;
+            padding: 0;
+            font-size: 1rem;
+            min-width: 10px;
             position: absolute;
-            left: 44px;
+            left: 10px;
         }
 
         .paginationBtnRight {
+            top: 0px;
+            padding: 0;
             position: absolute;
-            right: 44px;
+            right: 10px;
+            font-size: 1rem;
+            min-width: 10px;
         }
 
         .paginationLastPage {
-            right: 120px;
+            right: 50px;
         }
 
         .paginationFirstPage {
-            left: 116px;
+            left: 50px;
         }
 
         .paginationLastPage,
         .paginationFirstPage {
+            padding: 3px;
+            height: 100%;
+            top: 0px;
             position: absolute;
             bottom: 8px;
+            max-width: 30px;
         }
-        .activePaginationItem:hover,
-        .paginationItem:hover {
-            cursor: inherit;
+
+    }
+}
+@media (min-width: 201px) and (max-width: 330px ) {
+    .mapedItems {
+        text-align: center;
+        width: 100vw;
+        display: grid;
+        padding: 0;
+        grid-template-columns: repeat(1, 160px);
+        font-size: 0.8rem;
+        justify-content: center;
+
+        .countryImage {
+            max-width: 124px;
+            max-height: 70px;
         }
-        .paginationLastPage:hover,
-        .paginationFirstPage:hover {
-            cursor: inherit;
+
+        .currentCountry {
+            margin-bottom: -20px;
+        }
+    }
+
+    .paginationBlock {
+        max-width: 460px;
+        max-height: 40px;
+        padding: 0px;
+        left: 0;
+        font-size: 0.9rem;
+        top: 0;
+
+        .activePaginationItem,
+        .paginationItem {
+            padding: 3px;
+            margin: 0 4px;
+            max-width: 6vw;
+        }
+
+        .paginationBtnLeft {
+            top: 0;
+            padding: 0;
+            font-size: 1rem;
+            min-width: 10px;
+            position: absolute;
+            left: 10px;
+        }
+
+        .paginationBtnRight {
+            top: 0px;
+            padding: 0;
+            position: absolute;
+            right: 10px;
+            font-size: 1rem;
+            min-width: 10px;
+        }
+
+   
+
+        .paginationLastPage,
+        .paginationFirstPage {
+            display: none;
+        }
+
+    }
+}
+
+@media (max-width: 200px ) {
+    .mapedItems {
+        text-align: center;
+        width: 100vw;
+        display: grid;
+        padding: 0;
+        grid-template-columns: repeat(1, 160px);
+        font-size: 0.8rem;
+        justify-content: center;
+
+        .countryImage {
+            max-width: 124px;
+            max-height: 70px;
+        }
+
+        .currentCountry {
+            margin-bottom: -20px;
+        }
+    }
+
+    .paginationBlock {
+        max-width: 460px;
+        max-height: 40px;
+        padding: 0px;
+        left: 0;
+        font-size: 0.9rem;
+        top: 0;
+
+        .activePaginationItem{
+            padding: 3px;
+            margin: 0 4px;
+            max-width: 6vw;
+        }
+        .paginationItem {
+            display: none;
+        }
+
+        .paginationBtnLeft {
+            top: 0;
+            padding: 0;
+            font-size: 1rem;
+            min-width: 10px;
+            position: absolute;
+            left: 10px;
+        }
+
+        .paginationBtnRight {
+            top: 0px;
+            padding: 0;
+            position: absolute;
+            right: 10px;
+            font-size: 1rem;
+            min-width: 10px;
+        }
+
+   
+
+        .paginationLastPage,
+        .paginationFirstPage {
+            display: none;
         }
 
     }
