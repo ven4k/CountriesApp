@@ -17,9 +17,9 @@ export const Pagination: FC<PaginationType> = ({ filtered }: PaginationType) => 
     // Состояние для пагинации номеров страниц
     const [pageLimit, setPageLimit] = useState<number>(8);
     const [maxPageNumberLimit, setmaxPageNumberLimit] = useState<number>(8);
-    const [minPageNumberLimit, setminPageNumberLimit] = useState<number>(0);
+    const [minPageNumberLimit, setminPageNumberLimit] = useState<number>(1);
     const [activePage, setActivePage] = useState<number>(1);
-    
+
     const PAGE_NUMBER_LIMIT: number = 4;
 
     // Изменение количества отображаемых флагов и переключаемых страниц для мобильных устройств
@@ -119,7 +119,12 @@ export const Pagination: FC<PaginationType> = ({ filtered }: PaginationType) => 
 
     //Отрисовка страниц пагинации
     const renderPageNumbers = pages.map((el) => {
-        if (el < maxPageNumberLimit + 1 && el > minPageNumberLimit) {
+        if (activePage > pages.length) {
+            setActivePage(1);
+            setminPageNumberLimit(1);
+            setmaxPageNumberLimit(8);
+        }
+        if (el <= maxPageNumberLimit && el >= minPageNumberLimit) {
             return (
                 <div key={el} className={activePage === el ? styles.activePaginationItem : styles.paginationItem} id={String(el)} onClick={handleClick}>
                     {el}
@@ -155,7 +160,8 @@ export const Pagination: FC<PaginationType> = ({ filtered }: PaginationType) => 
                     <div className={styles.paginationLastPage} onClick={() => handleLastButtonClick(lastPagesItem)}>...{lastPagesItem}</div>
                 )}
 
-            </div>) : null}
+            </div>) :
+                <div className={styles.countryNotFound}>Country not found</div>}
         </div>
     )
 
