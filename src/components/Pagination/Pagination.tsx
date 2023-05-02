@@ -134,7 +134,7 @@ export const Pagination: FC<PaginationType> = ({ filtered }: PaginationType) => 
                 {filtered.slice(indexOfFirstItem, indexOfLastItem).map((el: ApiData) => (
                     <div key={el.cca3} className={styles.currentCountry}>
                         <div className={styles.countryName}>{el.name.common}</div>
-                        <div onClick={() => { handleOpenModal(el) }}><img className={styles.countryImage} src={el.flags.svg} alt='country' /></div>
+                        <div onClick={() => { handleOpenModal(el) }}><img className={styles.countryImage} src={el.flags.png} alt={el.flags.alt} /></div>
                         <div className={styles.favoriteBtnsBlock}>
                             <Checkbox icon={<FavoriteBorder className={styles.favoriteIco} />} checkedIcon={<Favorite className={styles.favoriteActiveIco} />}
                                 checked={(favorites.find((item: ApiData) => item.cca3 === el.cca3) ? true : false)}

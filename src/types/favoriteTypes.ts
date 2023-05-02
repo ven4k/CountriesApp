@@ -13,7 +13,8 @@ export interface ApiData {
   continents?: string,
   flags: {
     png: string,
-    svg: string
+    svg: string,
+    alt: string
   },
   translations: {
     rus: {
