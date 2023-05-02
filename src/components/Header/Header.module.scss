@@ -38,22 +38,112 @@
 
 @media (max-width: 500px) {
     .header {
-        max-width: 100vw;
-
-        .activeLink {
-            border-bottom: 2px solid gold;
+        .headerItems {
+            display: none;
+        }
+        .burgerMenu {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-bottom: 2px solid #f7f7f7;
+            z-index: 1000;
+            transition: .5s ease-in;
+            top: 0;
+            left: 15px;
+        }
+        .burgerMenu::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-bottom: 2px solid #f7f7f7;
+            top: 10px;
+            z-index: 1000;
+            transition: .5s ease-in;
+        }
+        .burgerMenu::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            border-bottom: 2px solid #f7f7f7;
+            bottom: 10px;
+            z-index: 1000;
+            transition: .5s ease-in;
+        }
+        .burgerMenuActive::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            border-bottom: 2px solid black;
+            top: 5px;
+            z-index: 1000;
+            left: 16px;
+            transform: rotate(45deg);
         }
 
-        .link {
-            font-size: 1.3rem;
-            margin-right: 20px;
-            text-shadow: 2px 2px 2px #000;
+        .burgerMenuActive::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-bottom: 2px solid black;
+            top: 33px;
+            z-index: 1000;
+            left: 15px;
+            transform: rotate(135deg);
+        }
+        .navBarNonActive {
+            display: block;
+            visibility: hidden;
+            position: absolute;
+            text-align: start;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 0px;
+            height: 100vh;
+            background-color: none;
+            transition: .5s ease-in;
+
+            .items {
+                width: 100vw;
+                text-align: center;
+                overflow: hidden;
+                margin: 200px 0 0 0;
+
+                a {
+                    margin: 0 0 0 -1000px;
+                    font-size: 2rem;
+                    opacity: 0;
+                    transition: .5s ease-in;
+                }
+            }
         }
 
-        a:hover {
-            transform: scale(1);
-            color: inherit;
-            transition: 0;
+        .navBarActive {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+            transition: .5s ease-out;
+            visibility: visible;
+            background-color: #f7f7f7;
+
+            .items {
+                margin: 200px 0 0 0;
+
+                a {
+                    margin: 0;
+                    opacity: 1;
+                    transition: .5s ease-out;
+                }
+
+            }
         }
 
     }
