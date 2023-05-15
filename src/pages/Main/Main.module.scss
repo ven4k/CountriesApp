@@ -1,17 +1,27 @@
-.searchInput{
-    margin: 0 0 0 50px;
-}
-.loader{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
+main {
+    font-family: 'Saira', sans-serif;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    .searchInput {
+        margin: 20px 0 0 50px;
+    }
+
+    .loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+    }
 }
 
-@media (max-width: 500px){
-    .searchInput{
-        margin: 0 10px 0 10px;
+
+@media (max-width: 500px) {
+    main {
+        .searchInput {
+            margin: 10px 10px 0 10px;
+        }
     }
+
 }

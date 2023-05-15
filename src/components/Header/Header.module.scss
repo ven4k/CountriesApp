@@ -1,9 +1,20 @@
 .header {
-    padding: 0 0 60px 0;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(22, 27, 34);
+    box-shadow: 0px 0px 10px 2px rgba(22, 27, 34, 0.7);
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-family: 'PT Sans Caption', sans-serif;
 
     .headerItems {
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     .activeLink {
@@ -17,7 +28,7 @@
         text-decoration: none;
         font-size: 2.5rem;
         margin-right: 40px;
-        text-shadow: 4px 4px 4px #000;
+        text-shadow: 1px 1px 4px #000;
     }
 
     a:hover {

@@ -149,19 +149,20 @@ export const Pagination: FC<PaginationType> = ({ filtered }: PaginationType) => 
                 ))}
                 <Modal onClose={handleCloseModal} isOpen={activeModal} />
             </div>
-            {filtered.length >= 1 ? (<div className={styles.paginationBlock}>
-                <Button variant='outlined' className={styles.paginationBtnLeft} onClick={handlePrevbtn} disabled={activePage === 1} sx={{ marginTop: '-4px' }}>{'<<<'}</Button>
-                <div className={styles.paginationItemsBlock}>{renderPageNumbers}</div>
-                <Button variant='outlined' className={styles.paginationBtnRight} onClick={handleNextbtn} disabled={activePage === pages.length} sx={{ marginTop: '-4px' }}>{'>>>'}</Button>
-                {minPageNumberLimit !== 0 && (
-                    <div className={styles.paginationFirstPage} onClick={() => handleFirstButtonClick(firstPagesItem)}>{firstPagesItem}...</div>
-                )}
-                {activePage !== pages.length && (
-                    <div className={styles.paginationLastPage} onClick={() => handleLastButtonClick(lastPagesItem)}>...{lastPagesItem}</div>
-                )}
+            {filtered.length >= 1 ? (
+                <div className={styles.paginationBlock}>
+                    <Button variant='outlined' className={styles.paginationBtnLeft} onClick={handlePrevbtn} disabled={activePage === 1} sx={{ marginTop: '-4px' }}>{'<<<'}</Button>
+                    <div className={styles.paginationItemsBlock}>{renderPageNumbers}</div>
+                    <Button variant='outlined' className={styles.paginationBtnRight} onClick={handleNextbtn} disabled={activePage === pages.length} sx={{ marginTop: '-4px' }}>{'>>>'}</Button>
+                    {minPageNumberLimit !== 0 && (
+                        <div className={styles.paginationFirstPage} onClick={() => handleFirstButtonClick(firstPagesItem)}>{firstPagesItem}...</div>
+                    )}
+                    {activePage !== pages.length && (
+                        <div className={styles.paginationLastPage} onClick={() => handleLastButtonClick(lastPagesItem)}>...{lastPagesItem}</div>
+                    )}
 
-            </div>) :
-                <div className={styles.countryNotFound}>Country not found</div>}
+                </div>
+            ) : <div className={styles.countryNotFound}>Country not found</div>}
         </div>
     )
 

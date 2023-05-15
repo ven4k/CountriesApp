@@ -28,11 +28,12 @@ export const Main: FC = () => {
 
 
     return (
-        <div className={styles.main}>
+        <main className={styles.main}>
             <div className={styles.searchInput}>
                 <TextField label="Search" variant="outlined" onChange={handleChange}
                     sx={TextfieldStyles}
-                    value={inputValue} />
+                    value={inputValue}
+                    autoComplete='off' />
             </div>
             <div>
                 {err && <h2>{err}</h2>}
@@ -41,6 +42,6 @@ export const Main: FC = () => {
                     <Pagination filtered={filtered} />
                 </div>
             </div>
-        </div>
+        </main>
     )
 }

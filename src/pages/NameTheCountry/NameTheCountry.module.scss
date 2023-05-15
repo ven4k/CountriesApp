@@ -1,12 +1,19 @@
 .guessTheFlagPage {
-    margin-top: 100px;
+    font-family: 'Saira sans-serif';
+    font-weight: 500;
+    box-shadow: 0px 0px 10px 2px rgba(30, 37, 49, 0.7);
+    background-color: rgb(30, 37, 49);
+    width: 100%;
+    height: 1040px;
+    border-radius: 20px;
+    margin: 40px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .flagBlock {
-        width: 700px;
-        height: 500px;
+        margin: 80px 0 0 0;
+        width: 100%;
     }
 
     img {
@@ -15,8 +22,9 @@
     }
 
     .flagIslands {
+        margin: 0 0 0 10px;
         text-align: center;
-        top: 130px;
+        top: 140px;
         position: absolute;
         color: #f7f7f7;
         font-weight: 600;
@@ -28,6 +36,7 @@
         position: relative;
 
         .findInput {
+            padding: 0 0 0 10px;
             height: 40px;
             width: 300px;
             font-size: 20px;
@@ -43,7 +52,7 @@
         .resultTrue {
             position: absolute;
             font-size: 240px;
-            top: -460px;
+            top: -430px;
             left: -70px;
             text-shadow: 4px 4px 4px #000;
         }
@@ -62,18 +71,19 @@
         }
 
         .nextBtn {
-            margin: -66px 0 0 -78px; 
+            margin: -66px 0 0 -78px;
         }
 
     }
 
     .hiddenNameCountry {
+        letter-spacing: 0.1rem;
         text-align: center;
         top: 170px;
         position: absolute;
         color: #f7f7f7;
-        font-weight: 600;
-        text-shadow: 4px 4px 4px #000;
+        font-weight: 500;
+        text-shadow: 2px 2px 2px #000;
 
     }
 
@@ -98,6 +108,7 @@
         width: 300px;
         max-height: 400px;
         display: block;
+        z-index: 100;
     }
 
     .showedDatalist::-webkit-scrollbar {
@@ -108,7 +119,7 @@
     .showedDatalist::-webkit-scrollbar-thumb {
         width: 4px;
         border-radius: 6px;
-        background-color: #000;
+        background-color: #070755;
     }
 
     .option {
@@ -122,23 +133,135 @@
         background-color: tomato;
         cursor: pointer;
     }
+
+    .settingsBlock {
+        margin: 40px 0 0 0;
+        position: relative;
+        width: 900px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .open {
+            span {
+                font-size: 2rem;
+            }
+
+            .settingsIco {
+                margin: 0 6px 0 0;
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .open:hover {
+            cursor: pointer;
+            color: red;
+        }
+
+        .settings {
+            transition: .3s linear;
+            height: 230px;
+            background-color: rgb(9, 21, 46);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2px rgba(9, 21, 46, 0.7);
+            margin: 24px 0 0 0;
+            position: relative;
+            width: 300px;
+            display: flex;
+            justify-content: space-around;
+            padding: 6px;
+
+            .selectName {
+                display: block;
+                text-align: center;
+                font-size: 1.7rem;
+            }
+
+            .chooseRegion {
+                overflow: hidden;
+                position: relative;
+                transition: .3s linear;
+                position: relative;
+                width: 300px;
+                height: 220px;
+                font-style: normal;
+
+                .regionList {
+                    transition: .3s linear;
+                    width: 100%;
+                    height: 100%;
+                    margin: 10px 0 0 10px;
+
+                    input:hover {
+                        border: 1px solid red;
+                    }
+
+
+                    label {
+                        margin: 0 0 0 10px;
+                        font-size: 1.25rem;
+                    }
+
+                    label:hover {
+                        color: red;
+                    }
+                }
+
+                .saveBtn {
+                    font-family: 'PT Sans Caption', sans-serif;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    border: none;
+                    margin: 10px 0 0 78px;
+                    border-radius: 5px;
+                    width: 120px;
+                    height: 33px;
+                }
+            }
+
+        }
+
+        .hiddenSettings {
+            visibility: hidden;
+            transition: .2s linear;
+
+            .chooseRegion {
+                transition: .2s linear;
+                width: 300px;
+                height: 10px;
+                overflow: hidden;
+
+                .regionList {
+                    margin-top: -200px;
+                    width: 100%;
+                    height: 10px;
+                }
+            }
+        }
+    }
 }
 
 
-@media (min-width: 371px) and (max-width: 500px ) {
+
+@media (min-width: 371px) and (max-width: 500px) {
     .guessTheFlagPage {
         width: 100vw;
-        margin: 100px 0 0 0;;
+        margin: 100px 0 0 0;
+        ;
 
         .flagBlock {
             max-width: 90vw;
             height: 50vw;
         }
+
         img {
             max-width: 100%;
             max-height: 100%;
         }
-        .flagIslands{
+
+        .flagIslands {
             top: 150px;
             left: 30px;
             font-size: 1.15rem
@@ -146,6 +269,7 @@
 
         .formBlock {
             margin: 16px 0 0 80px;
+
             .findInput {
                 width: 200px;
             }
@@ -156,12 +280,13 @@
                 top: -250px;
                 left: -60px;
             }
+
             .checkBtn {
                 margin: -4px 0 0 10px;
             }
-    
+
             .nextBtn {
-                margin: -66px 0 0 -80px; 
+                margin: -66px 0 0 -80px;
             }
 
         }
@@ -171,7 +296,8 @@
             width: 100vw;
             top: 80px;
         }
-        .showedDatalist{
+
+        .showedDatalist {
             margin: 4px 0 0 -44px;
             max-height: 260px;
         }
@@ -179,20 +305,24 @@
     }
 
 }
-@media (max-width: 370px ) {
+
+@media (max-width: 370px) {
     .guessTheFlagPage {
         width: 100vw;
-        margin: 60px 0 0 0;;
+        margin: 60px 0 0 0;
+        ;
 
         .flagBlock {
             max-width: 90vw;
             height: 50vw;
         }
+
         img {
             max-width: 100%;
             max-height: 100%;
         }
-        .flagIslands{
+
+        .flagIslands {
             left: 25px;
             top: 100px;
             font-size: 1.1rem
@@ -202,28 +332,31 @@
             display: flex;
             flex-direction: column;
             margin: 16px 0 0 0;
+
             .findInput {
                 width: 100vw;
             }
 
-            .resultFalse{
+            .resultFalse {
                 font-size: 100px;
                 top: -185px;
                 left: 65px;
             }
+
             .resultTrue {
                 font-size: 100px;
                 top: -180px;
                 left: 65px;
             }
+
             .checkBtn {
                 min-width: 100vw;
                 margin: 16px 0 0 0;
             }
-    
+
             .nextBtn {
                 min-width: 100vw;
-                margin: 8px 0 0 0; 
+                margin: 8px 0 0 0;
             }
 
         }
@@ -234,12 +367,52 @@
             width: 100vw;
             top: 10px;
         }
-        .showedDatalist{
+
+        .showedDatalist {
             z-index: 1000;
             margin-left: 0px;
             width: 100vw;
             max-height: 260px;
         }
+
+
+
+        .settingsBlock {
+            width: 100vw;
+
+            .open {
+                width: 90vw;
+            }
+
+            .settings {
+                width: 100vw;
+
+                .chooseRegion {
+                    width: 100vw;
+
+                    .regionList {
+                        width: 100vw;
+
+                        input {
+                            margin: 0 0 0 20px;
+                        }
+
+                        label {
+                            margin: 0 0 0 10px;
+                        }
+                    }
+
+                    .saveBtn {
+                        margin: 10px 0 0 30px;
+                        width: 60vw;
+
+                    }
+                }
+
+            }
+        }
+
+
 
     }
 

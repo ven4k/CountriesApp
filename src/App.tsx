@@ -6,7 +6,9 @@ import { Header } from './components/Header/Header';
 import { NameTheCountry } from './pages/NameTheCountry/NameTheCountry';
 import { useAppDispatch } from './store/hooks';
 import { fetchCountries } from './store/middlewareThunk/fetchCountries';
-import './App.scss';
+import { Footer } from './components/Footer/Footer';
+import styles from './App.module.scss';
+
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -19,13 +21,14 @@ const App: React.FC = () => {
 
 
   return (
-    <div className="App">
+    <div className={styles.app}>
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/found-country" element={<NameTheCountry />} />
       </Routes>
+      <Footer />
     </div>
 
   );
