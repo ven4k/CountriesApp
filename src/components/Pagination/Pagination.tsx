@@ -22,7 +22,7 @@ export const Pagination: FC<PaginationType> = ({ filtered }: PaginationType) => 
 
     const PAGE_NUMBER_LIMIT: number = 4;
 
-    // Изменение количества отображаемых флагов и переключаемых страниц для мобильных устройств
+    //Изменение количества отображаемых флагов и переключаемых страниц для мобильных устройств
     useLayoutEffect(() => {
         if (window.matchMedia('(max-width: 500px)').matches === true) {
             setPageLimit(6)
@@ -64,7 +64,7 @@ export const Pagination: FC<PaginationType> = ({ filtered }: PaginationType) => 
                 setminPageNumberLimit(minPageNumberLimit + PAGE_NUMBER_LIMIT);
             }
         }
-        if (target !== 1) {
+        if (target !== 1 && target !== 2) {
             if (target - minPageNumberLimit === 1) {
                 setmaxPageNumberLimit(maxPageNumberLimit - PAGE_NUMBER_LIMIT);
                 setminPageNumberLimit(minPageNumberLimit - PAGE_NUMBER_LIMIT);

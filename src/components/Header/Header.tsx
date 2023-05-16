@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import clsx from 'clsx';
 import styles from './Header.module.scss';
@@ -8,6 +8,13 @@ export const Header: FC = () => {
     const handleClick = () => {
         setIsOpen(!isOpen)
     }
+    useEffect(() => {
+        if(isOpen){
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'visible'
+        }
+    }, [isOpen])
     return (
         <header className={styles.header}>
             <div className={styles.headerItems}>

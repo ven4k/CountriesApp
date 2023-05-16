@@ -1,10 +1,10 @@
 .header {
+    position: relative;
+    z-index: 1000;
     border-radius: 0 0 10px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(22, 27, 34);
-    box-shadow: 0px 0px 10px 2px rgba(22, 27, 34, 0.7);
     height: 80px;
     margin: 0;
     padding: 0;
@@ -87,7 +87,7 @@
             content: '';
             width: 40px;
             height: 40px;
-            position: absolute;
+            position: fixed;
             border-bottom: 2px solid black;
             top: 5px;
             z-index: 1000;
@@ -97,12 +97,12 @@
 
         .burgerMenuActive::before {
             content: '';
-            position: absolute;
+            position: fixed;
+            z-index: 1000;
             width: 40px;
             height: 40px;
             border-bottom: 2px solid black;
             top: 33px;
-            z-index: 1000;
             left: 15px;
             transform: rotate(135deg);
         }
@@ -111,7 +111,6 @@
             visibility: hidden;
             position: absolute;
             text-align: start;
-            z-index: 100;
             top: 0;
             left: 0;
             width: 0px;
@@ -135,7 +134,9 @@
         }
 
         .navBarActive {
-            position: absolute;
+            overflow: hidden;
+            position: fixed;
+            z-index: 500;
             top: 0;
             left: 0;
             width: 100vw;
@@ -172,7 +173,6 @@
             width: 40px;
             height: 40px;
             border-bottom: 2px solid #f7f7f7;
-            z-index: 1000;
             transition: .5s ease-in;
             top: 0;
             left: 15px;
@@ -251,6 +251,7 @@
 
         .navBarActive {
             position: absolute;
+            z-index: 1000;
             top: 0;
             left: 0;
             width: 100vw;
@@ -261,9 +262,12 @@
             background-color: #f7f7f7;
 
             .items {
+                position: relative;
+                z-index: 1000;
                 margin: 200px 0 0 0;
 
                 a {
+                    z-index: 1000;
                     margin: 0;
                     opacity: 1;
                     transition: .5s ease-out;
