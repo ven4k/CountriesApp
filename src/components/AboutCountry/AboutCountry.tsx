@@ -1,15 +1,22 @@
 import { FC } from "react"
-import { AboutCountryType } from "../../types/typesComponents"
+import { ApiData } from "../../types/favoriteTypes"
 
-export const AboutCountry :FC<AboutCountryType> = ({ targetStyles, targetElement }: AboutCountryType) => {
+
+interface IAboutCountry {
+    styles: string,
+    item: ApiData,
+}
+
+export const AboutCountry: FC<IAboutCountry> = ({ ...props }) => {
+    const { styles, item } = props
     return (
-        <div className={targetStyles}>
-            <div><span>Name: </span>{targetElement.name.common}</div>
-            <div><span>Official: </span> {targetElement.name.official}</div>
-            <div><span>Region: </span> {targetElement.region}</div>
-            <div><span>Languages: </span> {Object.values(targetElement.languages).join(', ')}</div>
-            <div><span>Population: </span>{targetElement.population} people</div>
-            <div><span>Timezones: </span>{targetElement.timezones?.join(', ')}</div>
+        <div className={styles}>
+            <div><span>Name: </span>{item.name.common}</div>
+            <div><span>Official: </span> {item.name.official}</div>
+            <div><span>Region: </span> {item.region}</div>
+            <div><span>Languages: </span> {Object.values(item.languages).join(', ')}</div>
+            <div><span>Population: </span>{item.population} people</div>
+            <div><span>Timezones: </span>{item.timezones?.join(', ')}</div>
         </div>
 
 

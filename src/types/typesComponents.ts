@@ -9,10 +9,7 @@ export interface ModalProps {
     isOpen?: boolean
     currentId?: string;
 }
-export type AboutCountryType = {
-    targetStyles: string,
-    targetElement: ApiData;
-}
+
 export type PaginationType = {
     filtered: ApiData[],
 }

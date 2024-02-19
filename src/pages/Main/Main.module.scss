@@ -1,29 +1,26 @@
-main {
-    position: relative;
-    z-index: 100;
-    font-family: 'Saira', sans-serif;
-    font-weight: 500;
-    margin: 0 0 20px 0;
-    .searchInput {
-        margin: 20px 0 0 50px;
-    }
-
-    .loader {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 400px;
-        height: 400px;
-        margin: 0 auto;
-    }
+.searchInput {
+  margin: 60px 0 60px 0;
+  position: relative;
+  z-index: 1000;
 }
-
-
-@media (max-width: 500px) {
-    main {
-        .searchInput {
-            margin: 10px 10px 0 10px;
-        }
-    }
-
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 100;
+  font-family: "Saira", sans-serif;
+  font-weight: 500;
+  width: 100%;
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+  }
+  .mainContent {
+    display: flex;
+    align-self: center;
+  }
 }

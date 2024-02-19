@@ -26,7 +26,7 @@ export const Modal: FC<ModalProps> = ({ onClose, isOpen = false }: ModalProps) =
             <div className={styles.modalAll} onClick={onClose}>
                 <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
                     <div><img src={currCountry.flags.svg} alt="flag" /></div>
-                    <AboutCountry targetStyles={styles.countryInform} targetElement={currCountry}/>
+                    <AboutCountry styles={styles.countryInform} item={currCountry}/>
                 </div>
             </div>,
             element,

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { NavLink } from "react-router-dom";
 import clsx from 'clsx';
 import styles from './Header.module.scss';
@@ -8,19 +8,12 @@ export const Header: FC = () => {
     const handleClick = () => {
         setIsOpen(!isOpen)
     }
-    useEffect(() => {
-        if(isOpen){
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'visible'
-        }
-    }, [isOpen])
     return (
         <header className={styles.header}>
             <div className={styles.headerItems}>
                 <NavLink className={({ isActive }) => clsx(styles.link, { [styles.activeLink]: isActive })} to='/'>Home</NavLink>
                 <NavLink className={({ isActive }) => clsx(styles.link, { [styles.activeLink]: isActive })} to='/favorites'>Favorites</NavLink>
-                <NavLink className={({ isActive }) => clsx(styles.link, { [styles.activeLink]: isActive })} to='/found-country'>Guess the country</NavLink>
+                <NavLink className={({ isActive }) => clsx(styles.link, { [styles.activeLink]: isActive })} to='/flagdle'>Flagdle</NavLink>
             </div>
             <div>
                 <div className={clsx(styles.burgerMenu, { [styles.burgerMenuActive]: isOpen })} onClick={handleClick}></div>
@@ -28,7 +21,7 @@ export const Header: FC = () => {
                     <div className={styles.items} onClick={handleClick}>
                         <NavLink className={({ isActive }) => clsx(styles.link, { [styles.activeLink]: isActive })} to='/'>Home</NavLink>
                         <NavLink className={({ isActive }) => clsx(styles.link, { [styles.activeLink]: isActive })} to='/favorites'>Favorites</NavLink>
-                        <NavLink className={({ isActive }) => clsx(styles.link, { [styles.activeLink]: isActive })} to='/found-country'>Guess the country</NavLink>
+                        <NavLink className={({ isActive }) => clsx(styles.link, { [styles.activeLink]: isActive })} to='/flagdle'>FlagDle</NavLink>
                     </div>
 
                 </div>

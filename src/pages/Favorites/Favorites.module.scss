@@ -1,108 +1,70 @@
 .favoritePage {
-    position: relative;
-    z-index: 1;
-    margin: 20px 0 0 0;
-    font-family: 'Saira, sans-serif';
-    font-weight: 400;
+  position: relative;
+  z-index: 1;
+  margin: 20px 0 0 0;
+  font-family: "Saira, sans-serif";
+  font-weight: 400;
 
+  .favoriteBlock {
+    margin: 10px 0 0 0;
+    padding: 20px;
+    background-color: #1e2531;
+    display: flex;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 271px) and (max-width: 768px) {
+  .favoritePage {
     .favoriteBlock {
-        margin: 10px 0 0 0;
-        padding: 20px;
-        background-color: #1e2531;
-        display: flex;
-        font-size: 20px;
+      margin-left: 10px;
+      padding: 10px 15px 10px 10px;
+      font-size: 14px;
+      max-width: 100vw;
 
-        .countryName {
-            margin-bottom: 4px;
-            font-size: 1.4rem;
-            font-weight: 500;
-        }
+      .countryFlag {
+        margin-top: 10px;
+        max-width: 124px;
+        max-height: 70px;
+      }
 
-        .countryFlag {
-            width: 300px;
-            height: 170px;
-        }
+      .countryName {
+        max-width: 120px;
+      }
 
-        .favoriteMainInfo {
-            text-align: center;
-        }
-
-        span {
-            color: gold;
-            font-weight: 600;
-        }
-
-        .favoriteInform {
-            div {
-                padding: 2px;
-            }
-
-            margin-top: 20px;
-            margin-left: 40px;
-        }
-
+      .favoriteInform {
+        margin-left: 30px;
+      }
     }
-}
-
-.empty {
-    margin: 20px 0 0 0;
-    font-size: 3rem;
-    text-align: center;
-}
-
-@media (min-width: 271px) and (max-width: 500px) {
-    .favoritePage {
-        .favoriteBlock {
-            margin-left: 10px;
-            padding: 10px 15px 10px 10px;
-            font-size: 14px;
-            max-width: 100vw;
-
-            .countryFlag {
-                margin-top: 10px;
-                max-width: 124px;
-                max-height: 70px;
-
-            }
-
-            .countryName {
-                max-width: 120px;
-            }
-
-            .favoriteInform {
-                margin-left: 30px;
-            }
-        }
-    }
+  }
 }
 
 @media (max-width: 270px) {
-    .favoritePage {
-        .favoriteBlock {
-            border: none;
-            border-bottom: 2px solid white;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-left: 10px;
-            padding: 10px 15px 10px 10px;
-            font-size: 14px;
-            max-width: 100vw;
+  .favoritePage {
+    .favoriteBlock {
+      border: none;
+      border-bottom: 2px solid white;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+      padding: 10px 15px 10px 10px;
+      font-size: 14px;
+      max-width: 100vw;
 
-            .countryFlag {
-                margin-top: 10px;
-                max-width: 124px;
-                max-height: 70px;
-            }
+      .countryFlag {
+        margin-top: 10px;
+        max-width: 124px;
+        max-height: 70px;
+      }
 
-            .countryName {
-                max-width: 120px;
-            }
+      .countryName {
+        max-width: 120px;
+      }
 
-            .favoriteInform {
-                margin-left: 30px;
-            }
-        }
-
+      .favoriteInform {
+        margin-left: 30px;
+      }
     }
+  }
 }

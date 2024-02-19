@@ -1,366 +1,81 @@
 .paginationPage {
-    position: relative;
-    z-index: 5;
-    margin: 30px 0 0 0;
-    border-radius: 10px;
-    padding: 0 0 30px 0;
+  align-self: center;
 }
-
-.favoriteIco {
-    color: white;
-}
-
-.favoriteActiveIco {
-    color: red;
-}
-
 .mapedItems {
-    margin: 60px 0 0 0;
-    padding: 40px 0 0 0;
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: center;
-    font-size: 20px;
-    font-weight: 600;
-    gap: 30px;
-
-    .currentCountry {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 0 40px 0;
-        border-radius: 10px;
-        user-select: none;
-    }
-
-    .countryImage {
-        width: 300px;
-        height: 170px;
-    }
-
-    .countryImage:hover {
-        cursor: pointer;
-    }
-
-    .countryName {
-        position: relative;
-        top: -20px;
-        font-size: 1.5rem;
-        text-shadow: 1px 1px 4px #000;
-        margin-bottom: 6px;
-    }
-
-    .currentCountry:hover {
-        color: red;
-        transform: scale(1.1);
-    }
-
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: center;
+  max-width: 1440px;
+  gap: 50px;
 }
-
-
-
+.imageBlock {
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+.countryImage {
+  border: 1px solid grey;
+  width: 100%;
+  height: 100%;
+}
+.currentCountry {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  flex: 1 1 300px;
+  position: relative;
+}
 .paginationBlock {
-    border-radius: 10px;
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    margin: 60px 0 0 0;
-
-    .paginationItemsBlock {
-        display: flex;
-    }
-
-    .activePaginationItem {
-        text-align: center;
-        outline: 2px solid red;
-        margin: 0 16px;
-        padding: 6px;
-        width: 40px;
-    }
-
-    .activePaginationItem,
-    .paginationItem {
-        border-radius: 4px;
-    }
-
-    .activePaginationItem:hover,
-    .paginationItem:hover {
-        cursor: pointer;
-    }
-
-    .paginationItem {
-        text-align: center;
-        outline: 2px solid gray;
-        margin: 0 16px;
-        padding: 6px;
-        width: 40px;
-    }
-
-    .paginationBtnLeft {
-        font-size: 20px;
-        position: absolute;
-        left: 260px;
-    }
-
-    .paginationBtnRight {
-        font-size: 20px;
-        position: absolute;
-        right: 260px;
-    }
-
-    .paginationBtnLeft,
-    .paginationBtnRight {
-        top: 0;
-        color: white;
-    }
-
-    .paginationLastPage {
-        position: absolute;
-        right: 350px;
-        top: 5px;
-    }
-
-    .paginationLastPage:hover,
-    .paginationFirstPage:hover {
-        cursor: pointer;
-    }
-
-    .paginationLastPage,
-    .paginationFirstPage {
-        padding: 6px;
-        width: 40px;
-        outline: 2px solid gold;
-        border-radius: 4px;
-    }
-
-    .paginationFirstPage {
-        position: absolute;
-        top: 5px;
-        left: 350px;
-    }
+  margin: 80px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
 }
-.countryNotFound{
-    margin: 40px 0 0 0;
-    font-size: 2rem;
-    text-align: center;
+.paginationItemsBlock {
+  display: flex;
 }
-@media (min-width: 331px)and (max-width: 500px) {
-    .mapedItems {
-        text-align: center;
-        width: 100vw;
-        display: grid;
-        padding: 0;
-        grid-template-columns: repeat(2, 160px);
-        font-size: 0.8rem;
-        justify-content: center;
-        .currentCountry{
-            margin: 20px 0 40px 0;
-        }
-
-        .countryImage {
-            max-width: 124px;
-            max-height: 70px;
-        }
-        .countryName{
-            top: -30px;
-            font-size: 1rem;
-        }
-
-        .currentCountry {
-            margin: 0;
-        }
-    }
-
-    .paginationBlock {
-        max-width: 460px;
-        max-height: 40px;
-        padding: 0px;
-        left: 0;
-        font-size: 0.9rem;
-        top: 0;
-
-        .activePaginationItem,
-        .paginationItem {
-            padding: 3px;
-            margin: 0 4px;
-            max-width: 6vw;
-        }
-
-        .paginationBtnLeft {
-            top: 0;
-            padding: 0;
-            font-size: 1rem;
-            min-width: 10px;
-            position: absolute;
-            left: 10px;
-        }
-
-        .paginationBtnRight {
-            top: 0px;
-            padding: 0;
-            position: absolute;
-            right: 10px;
-            font-size: 1rem;
-            min-width: 10px;
-        }
-
-        .paginationLastPage {
-            right: 50px;
-        }
-
-        .paginationFirstPage {
-            left: 50px;
-        }
-
-        .paginationLastPage,
-        .paginationFirstPage {
-            padding: 3px;
-            height: 100%;
-            top: 0px;
-            position: absolute;
-            bottom: 8px;
-            max-width: 30px;
-        }
-
-    }
+.activePaginationItem {
+  border: 2px solid red !important;
 }
-@media (min-width: 201px) and (max-width: 330px ) {
-    .mapedItems {
-        text-align: center;
-        width: 100vw;
-        display: grid;
-        padding: 0;
-        grid-template-columns: repeat(1, 160px);
-        font-size: 0.8rem;
-        justify-content: center;
-
-        .countryImage {
-            max-width: 124px;
-            max-height: 70px;
-        }
-
-        .currentCountry {
-            margin: 0;
-        }
-        .countryName{
-            top: -24px;
-            font-size: 1rem;
-        }
-    }
-
-    .paginationBlock {
-        max-width: 460px;
-        max-height: 40px;
-        padding: 0px;
-        left: 0;
-        font-size: 0.9rem;
-        top: 0;
-
-        .activePaginationItem,
-        .paginationItem {
-            padding: 3px;
-            margin: 0 4px;
-            max-width: 6vw;
-        }
-
-        .paginationBtnLeft {
-            top: 0;
-            padding: 0;
-            font-size: 1rem;
-            min-width: 10px;
-            position: absolute;
-            left: 10px;
-        }
-
-        .paginationBtnRight {
-            top: 0px;
-            padding: 0;
-            position: absolute;
-            right: 10px;
-            font-size: 1rem;
-            min-width: 10px;
-        }
-
-   
-
-        .paginationLastPage,
-        .paginationFirstPage {
-            display: none;
-        }
-
-    }
+.paginationItem {
+  color: white !important;
+  margin: 0 6px 0 0;
 }
-
-@media (max-width: 200px ) {
-    .mapedItems {
-        text-align: center;
-        width: 100vw;
-        display: grid;
-        padding: 0;
-        grid-template-columns: repeat(1, 160px);
-        font-size: 0.8rem;
-        justify-content: center;
-
-        .countryImage {
-            max-width: 124px;
-            max-height: 70px;
-        }
-
-        .currentCountry {
-            margin: 0;
-        }
-        .countryName{
-            top: -24px;
-            font-size: 1rem;
-        }
-    }
-
-    .paginationBlock {
-        max-width: 460px;
-        max-height: 40px;
-        padding: 0px;
-        left: 0;
-        font-size: 0.9rem;
-        top: 0;
-
-        .activePaginationItem{
-            padding: 3px;
-            margin: 0 4px;
-            max-width: 6vw;
-        }
-        .paginationItem {
-            display: none;
-        }
-
-        .paginationBtnLeft {
-            top: 0;
-            padding: 0;
-            font-size: 1rem;
-            min-width: 10px;
-            position: absolute;
-            left: 10px;
-        }
-
-        .paginationBtnRight {
-            top: 0px;
-            padding: 0;
-            position: absolute;
-            right: 10px;
-            font-size: 1rem;
-            min-width: 10px;
-        }
-
-   
-
-        .paginationLastPage,
-        .paginationFirstPage {
-            display: none;
-        }
-
-    }
+.countryName {
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 1px 1px 4px #000;
+}
+.countryNotFound {
+  font-size: 32px;
+  font-weight: 600;
+  text-shadow: 1px 1px 4px #000;
+  text-align: center;
+}
+.favoriteIco {
+  color: #f7f7f7;
+}
+.favoriteActiveIco {
+  color: red;
+}
+@media (max-width: 768px) {
+  .mapedItems {
+    width: auto;
+    max-width: 1440px;
+  }
+  .paginationBtnLeft,
+  .paginationBtnRight {
+    position: absolute !important;
+    bottom: -50px;
+    width: 44% !important;
+  }
+  .paginationBtnLeft {
+    left: 16px;
+  }
+  .paginationBtnRight{
+    right: 16px;
+  }
 }

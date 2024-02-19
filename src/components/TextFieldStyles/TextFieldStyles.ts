@@ -1,4 +1,5 @@
 export const TextfieldStyles = {
+    margin: "40px 0 0 20px",
     width: { sm: 250, md: 350 },
     color: "white",
     "& .MuiOutlinedInput-root:hover": {
